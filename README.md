@@ -1,4 +1,0 @@
-radeuav
-=======
-
-Radiation Detection UAV
