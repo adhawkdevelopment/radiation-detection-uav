@@ -5,4 +5,5 @@ The file named microcontroller contains the code that was loaded directly onto a
 
 Two of the folders contain images and videos of the UAV and its interface.
 
-The other folder, named MATLAB, contains two folders, one named RaDeUI, and one named Data_Log.  The code for the graphical user interface and data processing is contained in the RaDeUI folder.  All of this is written in MATLAB with some java components which were imported into MATLAB.  The Data_Log folder contains the data that has been collected from the UAV.
+The other folder, named MATLAB, contains two folders, one named RaDeUI, and one named Data_Log.  The code for the graphical user interface and data processing is contained in the RaDeUI folder.  All of this is written in MATLAB with some java components which were imported into MATLAB.  The Data_Log folder contains the data that is collected from the UAV during operation.
+
