@@ -1,0 +1,121 @@
+
+package mycharts;
+
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.dial.*;
+import org.jfree.chart.plot.dial.DialPointer.*;
+import org.jfree.chart.plot.dial.StandardDialFrame;
+import org.jfree.data.general.DefaultValueDataset;
+import org.jfree.ui.GradientPaintTransformType;
+import org.jfree.ui.StandardGradientPaintTransformer;
+
+public class RadiationDial1 extends JPanel 
+{
+
+	// initializers
+    	private DefaultValueDataset radiationData = new DefaultValueDataset(new Double(0.0));
+    	private DialPlot radDialPlot = new DialPlot(this.radDialPlot);
+    	private JFreeChart radDialChart = new JFreeChart("Radiation Dial", JFreeChart.DEFAULT_TITLE_FONT, this.radDialPlot, false);
+    	private ChartPanel radDialChartPanel = new ChartPanel(this.radDialChart);
+    	private JPanel radDialHolderPanel = new JPanel();
+    	private JPanel radDialPanel = new JPanel();
+    	private BorderLayout borderLayout = new BorderLayout();
+    	private GridBagLayout gridBagLayout = new GridBagLayout();
+    	private GridLayout radDialPanelGridLayout = new GridLayout();
+    	private GridLayout radDialGridLayout = new GridLayout();
+    	private Spinner radDialSpinner = new Spinner(45);
+
+
+
+    	// Radiation dial constructor
+    	public UAVRadDial() 
+	{
+        	try 
+		{
+            		this.radDialPlot.addradiationData(this.radiationData);
+            		this.radDialPlot.setSeriesPaint(1, Color.red);
+            		this.radDialPlot.setSeriesOutlinePaint(1, Color.red);
+            		radDialInit();
+        	}
+        	catch (Exception ex) 
+		{
+	            	ex.printStackTrace();
+        	}
+    	}
+
+
+
+    	/**
+     	* Initialises the user interface.
+     	*
+     	* @throws Exception if there are any exceptions.
+     	*/
+    	private void radDialInit() throws Exception 
+	{
+
+       		setLayout(this.radDialGridLayout);
+       		this.radDialHolderPanel.setLayout(this.borderLayout);
+
+
+		this.radDialSpinner.setEnabled(true);
+        	this.radDialSpinner.addPropertyChangeListener(new PropertyChangeListener() 
+		{
+        		public void propertyChange(final PropertyChangeEvent evt) 
+			{
+        			final Spinner spinner = (Spinner) evt.getSource();
+        			if (spinner.isEnabled()) 
+				{
+        	        		radiationData.setValue(new Double(spinner.getValue()));
+        	      		}
+			}
+		});
+
+	
+		this.radDialPanel.setLayout(this.radDialPanelGridLayout);
+        	this.radDialPanel.setLayout(this.gridBagLayout);
+
+
+        	add(this.radDialHolderPanel, null);
+        	this.radDialHolderPanel.add(this.radDialPanel, BorderLayout.SOUTH);
+
+        	this.radDialPanel.add(this.radDialSpinner,
+                	new GridBagConstraints(1, 0, 1, 1, 1.0, 0.0,
+                	GridBagConstraints.CENTER,
+                	GridBagConstraints.BOTH,
+                	new Insets(0, 0, 0, 0),
+                	0, 0));
+
+        	this.radDialHolderPanel.add(this.radDialChartPanel, BorderLayout.CENTER);
+    	}
+
+
+    	/**
+     	* Updates the data.
+     	*
+     	* @param value  the value.
+     	*/
+    	public void adjustData(final double value) 
+	{
+	        final Number val = this.radiationData.getValue();
+	        double newVal = value;
+	        if (val != null) 
+		{
+	        	newVal += val.doubleValue();
+        	}
+        	if (newVal > 360) {
+          		newVal = 0;
+        	}
+        	if (newVal < 0) {
+            		newVal = 360;
+        	}
+
+        	this.radiationData.setValue(new Double(newVal));
+    	}
+
+
+}
