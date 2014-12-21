@@ -22,15 +22,10 @@ close all;
 %% Add Required Files To Java Path
 javaaddpath ScreenCapture;
 javaaddpath ZXing-2.1;
-cd ZXing-2.1;
-cd core;
-javaaddpath core.jar;
-cd ../..;
-cd javase;
-javaaddpath javase.jar;
-cd ..;
-javaaddpath jfreechart-1.0.14.jar;
-javaaddpath jcommon-1.0.12.jar;
+javaaddpath ZXing-2.1/core/core.jar;
+javaaddpath ZXing-2.1/javase/javase.jar;
+javaaddpath jfreechart-1.0.14/lib/jfreechart-1.0.14.jar;
+javaaddpath jcommon-1.0.12/jcommon-1.0.12.jar;
 
 
 
