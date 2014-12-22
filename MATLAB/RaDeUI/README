@@ -1,0 +1,16 @@
+This directory contains the code used in order to run the MATLAB version of the user interface.
+
+
+The file named RaDeGUI.m is the file which opens the GUI upon execution in MATLAB (GNU Octave wont work due to certain functions working in MATLAB that Octave doesn't support).
+
+The folder named ScreenCapture contains the java files that are necessary to take the images of the QR codes in order to identify the present location.  The file named screencapture.m is the code that is actually run (in MATLAB) in order to take the images.
+
+The files named encode_qr.m and decode_qr.m are used to encode and decode images containing QR codes which were used in order to determine location of the UAV while collecting data.  These files are dependent on the files contained in the ZXing-2.1 folder.
+
+The file named stoploop.m is used to interrupt the process run by the GUI in order to scan for QR codes if such situations arise.
+
+The folder named jfreechart-1.0.14 contains files, specifically a java archive named jfreechart-1.0.14.jar, that are used to create the radiation level, heading, and attitude indicators.  The images that are used by the heading and attitude indicators are stored in the folder named 'res'.
+
+Create_Cell_Struct.m creates a file which contains the cell structure used to store the data collected.  the cell structure is stored in a file called loc_data.mat.
+
+

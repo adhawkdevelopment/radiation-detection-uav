@@ -1,0 +1,8 @@
+This directory contains the code used in order to run the MATLAB version of the user interface.
+
+
+The files are the incomplete pieces of code written in Java which were going to be used to create the GUI until our design group decided to do the entire GUI in MATLAB.
+
+The file named mycharts contains the java code used to create some of the indicators used for the GUI.  The code used to create the indicators depends on the java libraries contained in the org folder 
+
+
