@@ -1,0 +1,1 @@
+This directory contains the file that is uploaded to the Arduino brand microcontroller used for data collection.  More specifically, the microcontroller collects data from an accelerometer, a geiger counter, and a gyroscope.  The microcontroller then wirelessly transmits the data to the user terminal.
