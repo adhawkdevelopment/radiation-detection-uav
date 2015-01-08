@@ -9,6 +9,5 @@ The folder named Arduino containing the code that was loaded directly onto an Ar
 
 The folder named MATLAB contains two folders, one named RaDeUI and one named Data_Log.  The code for the graphical user interface and data processing is contained in the RaDeUI folder.  All of this is written in MATLAB with some java components which were imported into MATLAB.  The Data_Log folder contains the data that is collected from the UAV during operation.
 
-The last folder named Java contains the Java version of the user interface.  Please note, this folder is in the process of being updated.
 
 
