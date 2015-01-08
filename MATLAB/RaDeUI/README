@@ -1,7 +1,7 @@
 This directory contains the code used in order to run the MATLAB version of the user interface.
 
 
-The file named RaDeGUI.m is the file which opens the GUI upon execution in MATLAB (GNU Octave wont work due to certain functions working in MATLAB that Octave doesn't support).
+The file named RaDeGUI.m is the file which opens the GUI upon execution in MATLAB (GNU Octave wont work due to certain functions working in MATLAB that Octave doesn't support).  Please note, this version is not the latest version due to a loss of data when my last computer crashed (luckily it was well after the Senior Design class was over).
 
 The folder named ScreenCapture contains the java files that are necessary to take the images of the QR codes in order to identify the present location.  The file named screencapture.m is the code that is actually run (in MATLAB) in order to take the images.
 
